@@ -6,4 +6,6 @@ import com.epam.entity.Course;
 
 public interface CourseDao extends JpaRepository<Course, Integer> {
 
+	
+
 }
