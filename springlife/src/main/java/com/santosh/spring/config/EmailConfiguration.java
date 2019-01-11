@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.santosh.spring.CustomBeanFactoryBeanProcessor;
 import com.santosh.spring.CustomBeanPostProcessor;
+import com.santosh.spring.aware.Triangle;
 import com.santosh.spring.beans.EmailServerOptions;
 import com.santosh.spring.beans.EmailService;
 import com.santosh.spring.beans.EmailTemplate;
@@ -37,5 +38,12 @@ public class EmailConfiguration {
 	@Bean
 	public static BeanFactoryPostProcessor getBeanFactoryPostProcessor() {
 		return new CustomBeanFactoryBeanProcessor();
+	}
+	
+	@Bean
+	public Triangle getTriangle() {
+		Triangle triangle = new Triangle();
+		triangle.setType("Type");
+		return triangle;
 	}
 }
