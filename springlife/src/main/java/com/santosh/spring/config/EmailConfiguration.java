@@ -44,6 +44,7 @@ public class EmailConfiguration {
 	public Triangle getTriangle() {
 		Triangle triangle = new Triangle();
 		triangle.setType("Type");
+		System.out.println(triangle);
 		return triangle;
 	}
 }

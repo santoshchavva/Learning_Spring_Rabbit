@@ -57,6 +57,10 @@ public class Triangle implements ApplicationContextAware, BeanNameAware {
 		this.applicationContext = arg0;
 	}
 	
+	/**
+	 * When we are calling this method applicationContext is already Set.
+	 * @return
+	 */
 	public String draw() {
 		System.out.println(this.applicationContext.getBean(beanName));
 		return "type"+this.type;
