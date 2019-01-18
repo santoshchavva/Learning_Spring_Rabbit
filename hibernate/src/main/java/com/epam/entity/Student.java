@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -31,8 +33,10 @@ public class Student {
 
 	@NotBlank
 	@Column
+	@Size(min=3, message="Name should have atleast 3 characters")
 	private String name;
 	
+	@NotEmpty
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "student_course", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
 	private Set<Course> courses;
