@@ -18,6 +18,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.epam.annotations.Phone;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
@@ -40,6 +41,17 @@ public class Student {
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "student_course", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
 	private Set<Course> courses;
+	
+	@Phone
+	private String phone;
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
 	public Integer getId() {
 		return id;
